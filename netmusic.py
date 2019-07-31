@@ -1,5 +1,7 @@
 # coding: utf-8
 
+#https://toutiao.io/posts/2zqgye/preview
+
 from Crypto.Cipher import AES
 import base64
 import json
@@ -34,7 +36,7 @@ def music_interface(song_id):
         'encSecKey': encSecKey,
     }
     resp = requests.post(url=post_url, headers=headers, data=post_data)
-    print resp.content
+#     print resp.content
     js = json.loads(resp.content)
     song_url = js['data'][0]['url']
     return song_url
